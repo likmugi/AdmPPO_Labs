@@ -23,41 +23,27 @@ namespace RegistryWork
                 Properties.Settings.Default.IsFirstRun = false;
                 Properties.Settings.Default.RunCount = 1;
                 Properties.Settings.Default.Save();
-                firstOpen();
+
+                Registry.CurrentUser.CreateSubKey(@"Software\Шамугия");
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Шамугия", true);
+                key.SetValue("RunCount", Properties.Settings.Default.RunCount, RegistryValueKind.DWord);
+                key.Close();
             }
-            else //Далее при каждом запуске параметр будет увеличиваться на 1 и выводится сообщение о количестве оставшихся запусков
+            else
             {
-                
                 if (Properties.Settings.Default.RunCount <= Properties.Settings.Default.TrialVersionRuns)
                 {
-                    updateRunCounter();
-                }
-
-            }
-
-        }
-
-        private void updateRunCounter()
-        {
-           using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Шамугия", true))
-            {
-                if (key != null) 
-                {
-                    Properties.Settings.Default.RunCount++;
-                    Properties.Settings.Default.Save();
-                    key.SetValue("RunCount", Properties.Settings.Default.RunCount);
-                    key.Close();
+                    using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Шамугия", true))
+                    {
+                        Properties.Settings.Default.RunCount++;
+                        Properties.Settings.Default.Save();
+                        key.SetValue("RunCount", Properties.Settings.Default.RunCount);
+                        key.Close();
+                    }
                 }
             }
         }
 
-        private void firstOpen()
-        {
-            Registry.CurrentUser.CreateSubKey(@"Software\Шамугия");
-            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Шамугия", true);
-            key.SetValue("RunCount", Properties.Settings.Default.RunCount, RegistryValueKind.DWord);
-            key.Close();
-        }
 
         private void btnCreateKey_Click(object sender, EventArgs e)
         {
@@ -94,15 +80,15 @@ namespace RegistryWork
         {
             if(Properties.Settings.Default.RunCount != 1)
             {
+               
                 frmShareware sharewareForm = new frmShareware();
                 sharewareForm.Show();
+                
             }
             else
             {
                 MessageBox.Show("Вы пользуетесь пробной версией программы. Ограничение пробной версии: " + Properties.Settings.Default.TrialVersionRuns + " запусков программы. Для полнофункционального пользования приобретите лицензию.");
             }
-            
-            
 
             //modificated
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"AdmPPO\Practice");
