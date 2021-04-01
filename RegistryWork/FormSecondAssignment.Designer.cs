@@ -38,11 +38,11 @@ namespace RegistryWork
             // lblBeforeTrialEnd
             // 
             this.lblBeforeTrialEnd.AutoSize = true;
-            this.lblBeforeTrialEnd.Location = new System.Drawing.Point(37, 27);
+            this.lblBeforeTrialEnd.Location = new System.Drawing.Point(35, 27);
             this.lblBeforeTrialEnd.Name = "lblBeforeTrialEnd";
-            this.lblBeforeTrialEnd.Size = new System.Drawing.Size(153, 13);
+            this.lblBeforeTrialEnd.Size = new System.Drawing.Size(198, 13);
             this.lblBeforeTrialEnd.TabIndex = 0;
-            this.lblBeforeTrialEnd.Text = "До конца пробного периода:";
+            this.lblBeforeTrialEnd.Text = "Запусков до конца пробного периода";
             // 
             // btnRunCountFamiliarized
             // 
@@ -56,19 +56,19 @@ namespace RegistryWork
             // 
             // lblRunCount
             // 
-            this.lblRunCount.Location = new System.Drawing.Point(196, 27);
+            this.lblRunCount.Location = new System.Drawing.Point(239, 13);
             this.lblRunCount.Name = "lblRunCount";
             this.lblRunCount.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lblRunCount.Size = new System.Drawing.Size(145, 18);
+            this.lblRunCount.Size = new System.Drawing.Size(107, 45);
             this.lblRunCount.TabIndex = 2;
             this.lblRunCount.Text = "N запусков";
             this.lblRunCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTrialInformation
             // 
-            this.lblTrialInformation.Location = new System.Drawing.Point(40, 54);
+            this.lblTrialInformation.Location = new System.Drawing.Point(20, 56);
             this.lblTrialInformation.Name = "lblTrialInformation";
-            this.lblTrialInformation.Size = new System.Drawing.Size(301, 48);
+            this.lblTrialInformation.Size = new System.Drawing.Size(341, 48);
             this.lblTrialInformation.TabIndex = 3;
             this.lblTrialInformation.Text = "Для того чтобы пользоваться функионалом программы по истичении пробного периода, " +
     "вам необходимо приобрести лицензию.";
