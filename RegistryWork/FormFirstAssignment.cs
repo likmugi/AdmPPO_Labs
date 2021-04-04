@@ -21,26 +21,13 @@ namespace RegistryWork
                     Registry.CurrentUser.DeleteSubKey(@"Software\Шамугия");
                 }
                 Properties.Settings.Default.IsFirstRun = false;
-                Properties.Settings.Default.RunCount = 1;
+                Properties.Settings.Default.RunCount = 0;
                 Properties.Settings.Default.Save();
 
                 Registry.CurrentUser.CreateSubKey(@"Software\Шамугия");
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Шамугия", true);
-                key.SetValue("RunCount", Properties.Settings.Default.RunCount, RegistryValueKind.DWord);
+                key.SetValue("RunCount", Properties.Settings.Default.RunCount + 1, RegistryValueKind.DWord);
                 key.Close();
-            }
-            else
-            {
-                if (Properties.Settings.Default.RunCount <= Properties.Settings.Default.TrialVersionRuns)
-                {
-                    using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Шамугия", true))
-                    {
-                        Properties.Settings.Default.RunCount++;
-                        Properties.Settings.Default.Save();
-                        key.SetValue("RunCount", Properties.Settings.Default.RunCount);
-                        key.Close();
-                    }
-                }
             }
         }
 
@@ -78,7 +65,7 @@ namespace RegistryWork
 
         private void frmRegistryWork_Shown(object sender, EventArgs e)
         {
-            if(Properties.Settings.Default.RunCount != 1)
+            if(Properties.Settings.Default.RunCount != 0)
             {
                
                 frmShareware sharewareForm = new frmShareware();
@@ -88,6 +75,8 @@ namespace RegistryWork
             else
             {
                 MessageBox.Show("Вы пользуетесь пробной версией программы. Ограничение пробной версии: " + Properties.Settings.Default.TrialVersionRuns + " запусков программы. Для полнофункционального пользования приобретите лицензию.");
+                Properties.Settings.Default.RunCount++;
+                Properties.Settings.Default.Save();
             }
 
             //modificated
