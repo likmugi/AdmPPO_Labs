@@ -69,7 +69,7 @@ namespace RegistryWork
             {
                
                 frmShareware sharewareForm = new frmShareware();
-                sharewareForm.Show();
+                sharewareForm.ShowDialog();
                 
             }
             else
