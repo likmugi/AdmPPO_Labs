@@ -1,0 +1,10 @@
+C:\Users\scham\source\repos\RegistryWork\RegistryWork\bin\Release\RegistryWork.exe.config
+C:\Users\scham\source\repos\RegistryWork\RegistryWork\bin\Release\RegistryWork.exe
+C:\Users\scham\source\repos\RegistryWork\RegistryWork\bin\Release\RegistryWork.pdb
+C:\Users\scham\source\repos\RegistryWork\RegistryWork\obj\Release\RegistryWork.frmRegistryWork.resources
+C:\Users\scham\source\repos\RegistryWork\RegistryWork\obj\Release\RegistryWork.Properties.Resources.resources
+C:\Users\scham\source\repos\RegistryWork\RegistryWork\obj\Release\RegistryWork.csproj.GenerateResource.cache
+C:\Users\scham\source\repos\RegistryWork\RegistryWork\obj\Release\RegistryWork.csproj.CoreCompileInputs.cache
+C:\Users\scham\source\repos\RegistryWork\RegistryWork\obj\Release\RegistryWork.exe
+C:\Users\scham\source\repos\RegistryWork\RegistryWork\obj\Release\RegistryWork.pdb
+C:\Users\scham\source\repos\RegistryWork\RegistryWork\obj\Release\RegistryWork.csprojAssemblyReference.cache
